@@ -1,10 +1,10 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "index.js",
   "description": "Helpers library for GrowVia app",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "scripts": {
     "build": "npm run build:cjs && npm run build:esm && tsc --outDir build/src && node scripts/build-package.js",
@@ -22,7 +22,7 @@
   "author": "Veckov N",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/VeckovN/growvia-shared.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
