@@ -3,5 +3,5 @@
 
 export {
     IAuth
-} from './interfaces/authInterface';
+} from './authInterface';
 // } from './interfaces/auth.interface.ts';
