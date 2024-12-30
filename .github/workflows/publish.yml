@@ -16,6 +16,7 @@ jobs:
         with: 
           node-version: '22.x' 
       - run: npm install 
+      - run: chmod +x ./node_modules/.bin/babel
       - run: npm run build  
       - run:  |
           echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
