@@ -1,5 +1,5 @@
 {
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "types": "./src/index.d.ts",
   "description": "Helpers library for GrowVia app",
@@ -18,7 +18,7 @@
     "trailingComma": "es5"
   },
   "keywords": [],
-  "name": "@VeckovN/growvia-shared",
+  "name": "@veckovn/growvia-shared",
   "author": "Veckov N",
   "repository": {
     "type": "git",
