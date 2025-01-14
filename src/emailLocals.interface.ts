@@ -1,3 +1,8 @@
 export interface EmailLocalsInterface {
-    sender?: string;
+    template?: string, 
+    receiverEmail?: string, 
+    username?: string, 
+    verifyLink?: string,
+    resetLink?: string,
+    sender?: string
 }
