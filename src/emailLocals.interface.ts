@@ -4,5 +4,6 @@ export interface EmailLocalsInterface {
     username?: string, 
     verifyLink?: string,
     resetLink?: string,
+    appLink?: string,
     sender?: string
 }
