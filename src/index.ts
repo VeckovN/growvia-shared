@@ -1,9 +1,9 @@
 export {
-
     AuthPayloadInterface,
     AuthUserInterface,
     AuthUserDocumentInterface,
-    AuthUserMessageInterface
+    AuthUserMessageInterface,
+    AuthEmailVerificationInterface
 } from './auth.interface';
 export {
     EmailLocalsInterface
