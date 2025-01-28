@@ -13,15 +13,15 @@ export interface AuthPayloadInterface {
     iat?: number,
 }
 export interface AuthUserInterface {
-    id: number,
-    username: string;  
-    password: string;
-    email: string;
-    cloudinaryProfilePublicId: string; 
-    profilePicture: string;
-    verificatioEmailToken: string | null; //null after email verification
-    resetPasswordToken: string | null;
-    exipresResetPassword: Date | null; //when time exipres the date should be null
+    id?: number,
+    username?: string;  
+    password?: string;
+    email?: string;
+    cloudinaryProfilePublicId?: string; 
+    profilePicture?: string;
+    verificatioEmailToken?: string | null; //null after email verification
+    resetPasswordToken?: string | null;
+    exipresResetPassword?: Date | null; //when time exipres the date should be null
     // createdAt?: Date; //could be generated out of interface
 }
 
@@ -50,4 +50,10 @@ export interface AuthUserMessageInterface {
     // cloudinaryProfilePublicId: string; 
     profilePicture?: string;
     type?: string; //for what type of message -> auth->
+}
+
+export interface AuthEmailVerificationInterface {
+    receiverEmail?: string,
+    template?: string,
+    verifyLink?:string
 }
