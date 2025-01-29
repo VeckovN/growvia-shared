@@ -19,7 +19,7 @@ export interface AuthUserInterface {
     email?: string;
     cloudinaryProfilePublicId?: string; 
     profilePicture?: string;
-    verificatioEmailToken?: string | null; //null after email verification
+    verificationEmailToken?: string | null; //null after email verification
     resetPasswordToken?: string | null;
     exipresResetPassword?: Date | null; //when time exipres the date should be null
     // createdAt?: Date; //could be generated out of interface
@@ -32,7 +32,7 @@ export interface AuthUserDocumentInterface{
     email: string;
     cloudinaryProfilePublicId: string; 
     profilePicture: string;
-    verificatioEmailToken: string | null; //null after email verification
+    verificationEmailToken: string | null; //null after email verification
     resetPasswordToken: string | null;
     exipresResetPassword: Date | null; 
     deviceType: string,
