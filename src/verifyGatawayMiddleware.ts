@@ -14,9 +14,9 @@ enum serviceNames {
 }
 
 //middleware pased on every request (in each microservices)
-export function verifyGateway(req:Request, res:Response, next:NextFunction):void {
-    //check does JWT token exist in request header
-    const token = req.headers?.gatewayToken as string | undefined;
+export function verifyGateway(req:Request, _res:Response, next:NextFunction):void {
+    //check does JWT token exist in request header (req.headers props are lowercase)
+    const token = req.headers?.gatewaytoken as string | undefined;
     if(!token){
         throw new Error("Token doesn't exist in request. Invalid request")
     }
