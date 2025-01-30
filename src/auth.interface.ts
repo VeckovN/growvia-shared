@@ -21,25 +21,25 @@ export interface AuthUserInterface {
     profilePicture?: string;
     verificationEmailToken?: string | null; //null after email verification
     resetPasswordToken?: string | null;
-    exipresResetPassword?: Date | null; //when time exipres the date should be null
+    expiresResetPassword?: Date | null; //when time exipres the date should be null
     // createdAt?: Date; //could be generated out of interface
 }
 
-export interface AuthUserDocumentInterface{
-    id: number,
-    username: string;  
-    password: string;
-    email: string;
-    cloudinaryProfilePublicId: string; 
-    profilePicture: string;
-    verificationEmailToken: string | null; //null after email verification
-    resetPasswordToken: string | null;
-    exipresResetPassword: Date | null; 
-    deviceType: string,
-    browserName: string,
-    otp: string,
-    otpExpiration: Date | null,
-    createdAt: Date;
+export interface AuthUserDocumentInterface {
+    id?: number,
+    username?: string;  
+    password?: string;
+    email?: string;
+    cloudinaryProfilePublicId?: string; 
+    profilePicture?: string;
+    verificationEmailToken?: string | null; //null after email verification
+    resetPasswordToken?: string | null;
+    expiresResetPassword?: Date | null; 
+    deviceType?: string,
+    browserName?: string,
+    otp?: string,
+    otpExpiration?: Date | null,
+    createdAt?: Date;
 }
 
 export interface AuthUserMessageInterface {
