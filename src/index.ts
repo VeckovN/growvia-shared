@@ -9,7 +9,15 @@ export {
     EmailLocalsInterface
 } from './emailLocals.interface'
 export {
-    ErrorCustomResponseInterface
+    CustomErrorInterface,
+    BadRequestError,
+    NotAuthorizedError,
+    NotFoundError,
+    ConflictError,
+    ServerError
 } from './error.interface'
+export {
+    isEmailValid
+} from './helper'
 export{ verifyGateway} from './verifyGatawayMiddleware'
 export {winstonLogger} from './winstonLoger';
