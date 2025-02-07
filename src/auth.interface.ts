@@ -8,11 +8,6 @@ declare global {
     }
 }
 
-enum UserTypeOptions{
-    'customer',
-    'farmer'
-}
-
 export interface AuthPayloadInterface {
     id:number,
     username: string,
@@ -24,7 +19,7 @@ export interface AuthUserInterface {
     username?: string;  
     password?: string;
     email?: string;
-    userType?: UserTypeOptions,
+    userType?: 'customer' | 'farmer';
     cloudinaryProfilePublicId?: string; 
     profilePicture?: string;
     verificationEmailToken?: string | null; //null after email verification
@@ -38,7 +33,7 @@ export interface AuthUserDocumentInterface {
     username?: string;  
     password?: string;
     email?: string;
-    userType?: UserTypeOptions,
+    userType?: 'customer' | 'farmer';
     cloudinaryProfilePublicId?: string; 
     profilePicture?: string;
     verificationEmailToken?: string | null; //null after email verification
@@ -56,7 +51,7 @@ export interface AuthUserMessageInterface {
     username?: string;  
     password?: string;
     email?: string;
-    userType?: UserTypeOptions,
+    userType?: 'customer' | 'farmer';
     // cloudinaryProfilePublicId: string; 
     profilePicture?: string;
     type?: string; //for what type of message -> auth->
