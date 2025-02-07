@@ -1,3 +1,5 @@
+import { CustomerDocumentInterface, FarmerDocumentInterface } from "./users.interface";
+
 declare global {
     namespace Express {
         interface Request {
@@ -22,7 +24,7 @@ export interface AuthUserInterface {
     verificationEmailToken?: string | null; //null after email verification
     resetPasswordToken?: string | null;
     expiresResetPassword?: Date | null; //when time exipres the date should be null
-    // createdAt?: Date; //could be generated out of interface
+    createdAt?: Date; //could be generated out of interface
 }
 
 export interface AuthUserDocumentInterface {
@@ -56,4 +58,9 @@ export interface AuthEmailVerificationInterface {
     receiverEmail?: string,
     template?: string,
     verifyLink?:string
+}
+
+export interface AuthUserTypeMessageInterface {
+    type: string,
+    data:CustomerDocumentInterface | FarmerDocumentInterface
 }

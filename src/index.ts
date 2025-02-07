@@ -3,7 +3,8 @@ export {
     AuthUserInterface,
     AuthUserDocumentInterface,
     AuthUserMessageInterface,
-    AuthEmailVerificationInterface
+    AuthEmailVerificationInterface,
+    AuthUserTypeMessageInterface
 } from './auth.interface';
 export {
     EmailLocalsInterface
@@ -16,6 +17,11 @@ export {
     ConflictError,
     ServerError
 } from './error.interface'
+export {
+    FarmLocation,
+    CustomerDocumentInterface,
+    FarmerDocumentInterface
+} from './users.interface'
 export {
     isEmailValid
 } from './helper'
