@@ -18,6 +18,7 @@ export {
     ServerError
 } from './error.interface'
 export {
+    UserLocation,
     FarmLocation,
     CustomerDocumentInterface,
     FarmerDocumentInterface
