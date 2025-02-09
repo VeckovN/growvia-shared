@@ -43,6 +43,7 @@ export interface FarmerDocumentInterface {
     email:string, //same as in Auth
     profilePicture: string, //same as in Auth
     fullName: string,
+    farmName?: string, // Optional for those who operate as a business
     location?: FarmLocation | null, 
     description?: string,
     socialLinks?: string[];
