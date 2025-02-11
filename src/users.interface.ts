@@ -16,7 +16,7 @@ export interface CustomerDocumentInterface{
     email:string, //base data
     profilePicture?: string, //base data
     fullName: string,
-    address: UserLocation, //General location (Country, City, Zip Code).
+    location?: UserLocation, //General location (Country, City, Zip Code).
 
     //Depends on user Type:
     wishlist?: string[], //array of products type (From Product Interface) string[Product]
@@ -44,7 +44,7 @@ export interface FarmerDocumentInterface {
     profilePicture: string, //same as in Auth
     fullName: string,
     farmName?: string, // Optional for those who operate as a business
-    location?: FarmLocation | null, 
+    location: FarmLocation | null, 
     description?: string,
     socialLinks?: string[];
     totalProducts?: number,

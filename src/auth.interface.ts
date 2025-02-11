@@ -65,6 +65,6 @@ export interface AuthEmailVerificationInterface {
 
 export interface AuthUserTypeMessageInterface {
     type: string,
-    userType: 'customer' | 'farmer';
     data:CustomerDocumentInterface | FarmerDocumentInterface
+    userType?: 'customer' | 'farmer';
 }
