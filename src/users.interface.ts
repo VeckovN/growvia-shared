@@ -12,10 +12,10 @@ export interface CustomerDocumentInterface{
     //Base Data (similar as authUser instead of id)
     // id: string | ObjectId(from mongoose)
     id?: string,
-    username:string, //base data
-    email:string, //base data
+    username?:string, //base data
+    email?:string, //base data
     profilePicture?: string, //base data
-    fullName: string,
+    fullName?: string,
     location?: UserLocation, //General location (Country, City, Zip Code).
 
     //Depends on user Type:
@@ -39,12 +39,12 @@ export interface FarmLocation extends UserLocation{
 
 export interface FarmerDocumentInterface {
     id?:string, //from MongodB (may be different than from Auth)
-    username:string, //same as in Auth
-    email:string, //same as in Auth
-    profilePicture: string, //same as in Auth
-    fullName: string,
+    username?:string, //same as in Auth
+    email?:string, //same as in Auth
+    profilePicture?: string, //same as in Auth
+    fullName?: string,
     farmName?: string, // Optional for those who operate as a business
-    location: FarmLocation | null, 
+    location?: FarmLocation | null, 
     description?: string,
     socialLinks?: string[];
     totalProducts?: number,
