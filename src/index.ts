@@ -24,6 +24,12 @@ export {
     FarmerDocumentInterface
 } from './users.interface'
 export {
+    UnitType,
+    ProductCreateInterface,
+    ProductDocumentInterface
+} from './product.interface'
+
+export {
     isEmailValid
 } from './helper'
 export{ verifyGateway} from './verifyGatawayMiddleware'
