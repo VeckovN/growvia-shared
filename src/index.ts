@@ -28,6 +28,9 @@ export {
     ProductCreateInterface,
     ProductDocumentInterface
 } from './product.interface'
+export {
+    SearchResultInterface
+} from './search.interface'
 
 export {
     isEmailValid
