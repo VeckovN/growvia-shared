@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "types": "./src/index.d.ts",
   "description": "Helpers library for GrowVia app",

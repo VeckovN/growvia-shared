@@ -42,6 +42,8 @@ export interface ProductDocumentInterface {
     tags: string[];
     createdAt?: Date | string;
 
+    toJSON?: () => unknown;
+
     // //When the Review Service created
     // //Rating system (the product can be rated by customer)
     // ratingsCount?: number;  

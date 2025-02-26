@@ -29,7 +29,10 @@ export {
     ProductDocumentInterface
 } from './product.interface'
 export {
-    SearchResultInterface
+    SearchResultInterface,
+    PaginatePropsInterface,
+    QueryStringInterface,
+    ElasticQueryInterface
 } from './search.interface'
 
 export {
