@@ -25,6 +25,7 @@ export {
 } from './users.interface'
 export {
     UnitType,
+    UNIT_TYPES,
     ProductCreateInterface,
     ProductDocumentInterface
 } from './product.interface'

@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 
 //allowed units
-const UNIT_TYPES = ["piece", "kg", "g", "liter", "ml"] as const;
+export const UNIT_TYPES = ["piece", "kg", "g", "liter", "ml"] as const;
 export type UnitType = (typeof UNIT_TYPES)[number];  //10 kg, 
 
 
@@ -12,14 +12,10 @@ export interface ProductCreateInterface {
     images?: string[];
     description: string;
     shortDescription: string;
-    categories: string;
+    category: string;
     subCategories: string[];
     price: number;
     stock: number;
-    // stock: {
-    //     quantity: number;
-    //     unit: UnitType;
-    // }
     unit: UnitType; // "piece", "kg", "g", etc.
     tags: string[];
 }
@@ -34,7 +30,7 @@ export interface ProductDocumentInterface {
     images?: string[]; //more product's images
     description: string;
     shortDescription?: string;
-    categories: string; //main category names
+    category: string; //main category names
     subCategories?: string[]; //more catergories that is also relevant
     price: number;
     stock: number; //piece, kg,
