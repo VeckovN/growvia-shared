@@ -1,3 +1,5 @@
+import { OrderItemDocumentInterface } from './order.interface';
+
 export interface EmailLocalsInterface {
     template?: string, 
     receiverEmail?: string, 
@@ -6,4 +8,12 @@ export interface EmailLocalsInterface {
     resetLink?: string,
     appLink?: string,
     sender?: string
+
+    orderUrl?: string; 
+    orderID?: number;
+    invoiceID?: string; //created on client side wiht react-pdf
+    farmerUsername?: string;
+    customerUsername?: string;
+    totalAmount?: number;
+    orderItems?: OrderItemDocumentInterface[];
 }
