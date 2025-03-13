@@ -35,6 +35,13 @@ export {
     QueryStringInterface,
     ElasticQueryInterface
 } from './search.interface'
+export {
+    OrderCreateInterface,
+    OrderDocumentInterface,
+    OrderEmailMessageInterface,
+    OrderItemCreateInterface,
+    OrderItemDocumentInterface
+} from "./order.interface"
 
 export {
     isEmailValid
