@@ -40,7 +40,8 @@ export {
     OrderDocumentInterface,
     OrderEmailMessageInterface,
     OrderItemCreateInterface,
-    OrderItemDocumentInterface
+    OrderItemDocumentInterface,
+    OrderNotificationInterface
 } from "./order.interface"
 
 export {
