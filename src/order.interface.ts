@@ -5,6 +5,7 @@ export interface OrderCreateInterface {
     customer_email: string, //taken from the session (logged user) //req.currentUser.email
     customer_username: string, //new
     farmer_username: string, //new
+    farmer_email: string;
     invoice_id: string,
     total_amount: number, 
     payment_status: string,
@@ -47,14 +48,34 @@ export interface OrderItemDocumentInterface extends OrderItemCreateInterface {
 //OrderDocumentINterface can be defined with Omit<OrderCreateInterface, 'orderItems'>
 
 export interface OrderEmailMessageInterface {
-    template?: string; //panding status
+    template?: string;
     type?: string;
-    orderUrl?: string; 
-    orderID?: number;
-    invoiceID?: string; //created on client side wiht react-pdf
+    orderUrl?: string;
+    orderID?: string; //changed
+    invoiceID?: string;
     receiverEmail?: string;
     farmerUsername?: string;
+    farmerEmail?: string;
     customerUsername?: string;
+    customerEmail?: string;
     totalAmount?: number;
     orderItems?: OrderItemDocumentInterface[];
+    bothUsers?: boolean;
+}
+
+
+export interface OrderNotificationInterface {
+    id?: string; //id type of Notification Service DB
+    orderID: string;
+    senderID: string; //of can be get throught session -> currentUser.id
+    senderUsername: string;
+    senderEmail?: string;
+    receiverID: string; 
+    receiverUsername: string;
+    receiverEmail?: string;
+    message: string;
+    isRead: boolean;
+    type?: string;
+    bothUsers?: boolean;
+    createdAt?: Date;
 }
