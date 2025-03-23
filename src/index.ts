@@ -41,8 +41,10 @@ export {
     OrderEmailMessageInterface,
     OrderItemCreateInterface,
     OrderItemDocumentInterface,
-    OrderNotificationInterface
 } from "./order.interface"
+export {
+    NotificationInterface
+} from './notification.interface'
 
 export {
     isEmailValid
