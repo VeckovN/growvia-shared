@@ -8,6 +8,7 @@ interface payloadGatewayTokenRequest {
 
 enum serviceNames {
     'auth', 
+    'notification',
     'user',
     'order',
     'product'
