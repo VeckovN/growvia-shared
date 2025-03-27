@@ -1,4 +1,5 @@
 export interface NotificationInterface {
+    type: 'Order' | 'Authentication' | 'General';
     id?: string; //id type of Notification Service DB
     senderID: string; //of can be get throught session -> currentUser.id
     senderUsername: string;
@@ -6,7 +7,6 @@ export interface NotificationInterface {
     receiverID: string; 
     receiverUsername: string;
     receiverEmail?: string;
-    type: 'Order' | 'Authentication' | 'General';
     message: string;
     isRead: boolean;
     orderID?: string;

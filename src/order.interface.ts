@@ -1,23 +1,25 @@
 // Interface for creating an order (matches the 'orders' table)
 export interface OrderCreateInterface {
-    customer_id: string, //monogDB objectID as a string
-    farmer_id: string, //monogDB objectID as a string
-    customer_email: string, //taken from the session (logged user) //req.currentUser.email
-    customer_username: string, //new
-    farmer_username: string, //new
+    customer_id: string; //monogDB objectID as a string
+    farmer_id: string; //monogDB objectID as a string
+    customer_email: string; //taken from the session (logged user) //req.currentUser.email
+    customer_username: string;
+    farmer_username: string;
     farmer_email: string;
-    invoice_id: string,
-    total_amount: number, 
-    payment_status: string,
-    order_status: string,
-    payment_intent_id: string,
-    payment_token: string,
-    payment_method: string, //stripe or cod(cash on delivery)
-    shipping_address?: string, //where the product will be delivered.
-    billing_address?: string, //used for patment verification and invoicing
-    delivery_date?: Date | string,
-    tracking_url?: string,
-    orderItems: OrderItemCreateInterface[]; 
+    invoice_id: string;
+    total_price: number;
+    payment_status: string;
+    order_status: string;
+    payment_type: string;
+    payment_intent_id?: string;
+    payment_method_id?: string;
+    payment_method?: string;
+    payment_expires_at: Date;
+    shipping_address?: string; //where the product will be delivered.
+    billing_address?: string; //used for patment verification and invoicing
+    delivery_date?: Date | string;
+    tracking_url?: string;
+    orderItems: OrderItemCreateInterface[];
 }
 
 //Every Order Item (product) that contains in order
@@ -58,7 +60,7 @@ export interface OrderEmailMessageInterface {
     farmerEmail?: string;
     customerUsername?: string;
     customerEmail?: string;
-    totalAmount?: number;
+    totalPrice?: number;
     orderItems?: OrderItemDocumentInterface[];
     bothUsers?: boolean;
 }

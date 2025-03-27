@@ -8,12 +8,11 @@ export interface EmailLocalsInterface {
     resetLink?: string,
     appLink?: string,
     sender?: string
-
     orderUrl?: string; 
     orderID?: number;
     invoiceID?: string; //created on client side wiht react-pdf
     farmerUsername?: string;
     customerUsername?: string;
-    totalAmount?: number;
+    totalPrice?: number;
     orderItems?: OrderItemDocumentInterface[];
 }
