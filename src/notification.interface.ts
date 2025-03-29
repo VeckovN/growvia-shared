@@ -1,10 +1,12 @@
+import mongoose from "mongoose";
+
 export interface NotificationInterface {
     type: 'Order' | 'Authentication' | 'General';
     id?: string; //id type of Notification Service DB
-    senderID: string; //of can be get throught session -> currentUser.id
+    senderID: string | mongoose.Types.ObjectId; //of can be get throught session -> currentUser.id
     senderUsername: string;
     senderEmail?: string;
-    receiverID: string; 
+    receiverID: string | mongoose.Types.ObjectId;
     receiverUsername: string;
     receiverEmail?: string;
     message: string;
@@ -13,4 +15,3 @@ export interface NotificationInterface {
     bothUsers?: boolean;
     createdAt?: Date;
 }
-
