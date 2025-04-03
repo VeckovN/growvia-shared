@@ -45,9 +45,11 @@ export {
 export {
     NotificationInterface
 } from './notification.interface'
-
 export {
     isEmailValid
 } from './helper'
+export {
+    uploadImage
+} from './cloudinary'
 export{ verifyGateway} from './verifyGatawayMiddleware'
 export {winstonLogger} from './winstonLoger';
