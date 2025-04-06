@@ -9,7 +9,13 @@ export type UnitType = (typeof UNIT_TYPES)[number];  //10 kg,
 export interface ProductCreateInterface {
     farmerID: string | ObjectId;  //Relation with Users Service DB ()
     name: string;
-    images?: string[];
+    images?: 
+        string []  //for passing to the upload method (ase64 format -> client form)
+        |
+        {  // results type of cloudinary uploaded images
+            url: string,
+            publicID: string
+        }[] ,
     description: string;
     shortDescription: string;
     category: string;
@@ -27,7 +33,10 @@ export interface ProductDocumentInterface {
     // username: string;
     farmerID?: string | ObjectId; //id from other mongooDB db (Users -> from Users Service)
     name: string;
-    images?: string[]; //more product's images
+    images?: [{ 
+        url: string,
+        publicID: string
+    }];
     description: string;
     shortDescription?: string;
     category: string; //main category names

@@ -15,6 +15,7 @@ export interface CustomerDocumentInterface{
     username?:string, //base data
     email?:string, //base data
     profilePicture?: string, //base data
+    profilePublicID?: string;
     fullName?: string,
     location?: UserLocation, //General location (Country, City, Zip Code).
 
@@ -42,6 +43,7 @@ export interface FarmerDocumentInterface {
     username?:string, //same as in Auth
     email?:string, //same as in Auth
     profilePicture?: string, //same as in Auth
+    profilePublicID?: string;
     fullName?: string,
     farmName?: string, // Optional for those who operate as a business
     location?: FarmLocation | null, 
