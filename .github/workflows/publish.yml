@@ -18,7 +18,7 @@ jobs:
     permissions: 
       contents: read
       packages: write
-
+      
     steps:  
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,7 +26,9 @@ jobs:
           node-version: '22.x' 
           #this added for NPM Registry
           registry-url: 'https://registry.npmjs.org/'
+          scope: '@veckovn'
           
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
       - run: npm install 
       - run: chmod +x ./node_modules/.bin/babel
       # GitHub Package Registry setup (no longer needed) -> For Private
@@ -35,7 +37,7 @@ jobs:
       #     echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc }} >> build/.npmrc
       - run: npm run build
       - run: npm publish --access public
-        # working-directory: ./build 
+        working-directory: ./build 
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN  }}
