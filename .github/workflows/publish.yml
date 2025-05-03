@@ -4,7 +4,8 @@
 #This is now NPM Registry publish file
 #https://registry.npmjs.org/
 
-name: Publish
+# name: Publish
+name: Publish to NPM
 on: 
   push: 
     branches: [main]
@@ -30,6 +31,7 @@ jobs:
       # - run:  |
       #     echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
       #     echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc }} >> build/.npmrc
+      - run: npm run build
       - run: npm publish
         working-directory: ./build 
         env: 
