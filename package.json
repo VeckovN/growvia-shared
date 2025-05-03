@@ -1,5 +1,5 @@
 {
-    "version": "1.0.9",
+    "version": "1.1.0",
     "license": "MIT",
     "main": "build/cjs/index.js",
     "module": "build/esm/index.js",
@@ -9,9 +9,10 @@
       "node": ">=22"
     },
     "scripts": {
-      "build": "npm run build:cjs && npm run build:esm && tsc --outDir build/src && node scripts/build-package.js",
+      "build": "rm -rf build && npm run build:cjs && npm run build:esm && tsc --emitDeclarationOnly --outDir build/src && cp src/*.d.ts build/src/",
       "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs npx babel src --presets=./scripts/babel-preset.js --extensions .ts,.tsx --ignore src/**/*.specs.tsx --out-dir build/cjs --source-maps",
-      "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm npx babel src --presets=./scripts/babel-preset.js --extensions .ts,.tsx --ignore src/**/*.specs.tsx --out-dir build/esm --source-maps"
+      "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm npx babel src --presets=./scripts/babel-preset.js --extensions .ts,.tsx --ignore src/**/*.specs.tsx --out-dir build/esm --source-maps",
+      "prepublishOnly": "npm run build"
     },
     "prettier": {
       "printWidth": 80,
