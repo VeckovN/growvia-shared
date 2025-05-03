@@ -1,5 +1,5 @@
 {
-  "version": "0.4.3",
+  "version": "1.0.0",
   "license": "MIT",
   "types": "./src/index.d.ts",
   "description": "Helpers library for GrowVia app",
@@ -25,7 +25,8 @@
     "url": "git+https://github.com/VeckovN/growvia-shared.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "files": [
     "build",

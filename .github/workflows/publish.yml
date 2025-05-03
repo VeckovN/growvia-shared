@@ -15,12 +15,15 @@ jobs:
       - uses: actions/setup-node@v4
         with: 
           node-version: '22.x' 
+          registry-url: 'https://registry.npmjs.org/'
+          
       - run: npm install 
       - run: chmod +x ./node_modules/.bin/babel
       - run: npm run build  
-      - run:  |
-          echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
-          echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc
+      #used when was private
+      # - run:  |
+      #     echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
+      #     echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc
       - run: npm publish
         working-directory: ./build 
         env: 
