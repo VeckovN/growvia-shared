@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "types": "./src/index.d.ts",
   "description": "Helpers library for GrowVia app",
@@ -25,8 +25,7 @@
     "url": "git+https://github.com/VeckovN/growvia-shared.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "build",
@@ -48,7 +47,7 @@
     "winston-elasticsearch": "^0.19.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.27.1",
+    "@babel/cli": "^7.27.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
     "@types/express": "^5.0.0",
