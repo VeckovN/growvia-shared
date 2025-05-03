@@ -1,6 +1,9 @@
 #Github Package Registry -used  the shared library was private
 # https://npm.pkg.github.com
 
+#This is now NPM Registry publish file
+#https://registry.npmjs.org/
+
 name: Publish
 on: 
   push: 
@@ -18,15 +21,19 @@ jobs:
       - uses: actions/setup-node@v4
         with: 
           node-version: '22.x' 
+          #this added for NPM Registry
+          registry-url: 'https://registry.npmjs.org/'
+          
       - run: npm install 
       - run: chmod +x ./node_modules/.bin/babel
-      - run: npm run build  
-      - run:  |
-          echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
-          echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc
+      # GitHub Package Registry setup (no longer needed) -> For Private
+      # - run:  |
+      #     echo @VeckovN:https://npm.pkg.github.com/ > build/.npmrc  
+      #     echo //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }} >> build/.npmrc }} >> build/.npmrc
       - run: npm publish
         working-directory: ./build 
         env: 
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN  }}
         
 
