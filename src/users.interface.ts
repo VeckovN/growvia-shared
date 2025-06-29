@@ -8,10 +8,10 @@ export interface UserLocation{
     address: string,
 }
 
+//THERE WILL BE 'userID' that match Authentication 'id' prop
+
 export interface CustomerDocumentInterface{
-    //Base Data (similar as authUser instead of id)
-    // id: string | ObjectId(from mongoose)
-    id?: string,
+    userID?: string,
     username?:string, //base data
     email?:string, //base data
     profilePicture?: string, //base data
@@ -38,8 +38,8 @@ export interface FarmLocation extends UserLocation{
     longitude: string,
 }
 
-export interface FarmerDocumentInterface {
-    id?:string, //from MongodB (may be different than from Auth)
+export interface FarmerDocumentInterface { 
+    userID?:string, //same as in Auth ('id')
     username?:string, //same as in Auth
     email?:string, //same as in Auth
     profilePicture?: string, //same as in Auth

@@ -9,13 +9,13 @@ declare global {
 }
 
 export interface AuthPayloadInterface {
-    id:number,
+    id:string,
     username: string,
     email: string,
     iat?: number,
 }
 export interface AuthUserInterface {
-    id?: number,
+    id?: string,
     username?: string;  
     password?: string;
     email?: string;
@@ -29,7 +29,7 @@ export interface AuthUserInterface {
 }
 
 export interface AuthUserDocumentInterface {
-    id?: number,
+    id?: string,
     username?: string;  
     password?: string;
     email?: string;
@@ -47,7 +47,8 @@ export interface AuthUserDocumentInterface {
 }
 
 export interface AuthUserMessageInterface {
-    id?: number,
+    // id?: number,
+    id?: string,
     username?: string;  
     password?: string;
     email?: string;

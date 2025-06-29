@@ -5,9 +5,8 @@ export const UNIT_TYPES = ["piece", "kg", "g", "liter", "ml"] as const;
 export type UnitType = (typeof UNIT_TYPES)[number];  //10 kg, 
 
 
-//props for creating product
 export interface ProductCreateInterface {
-    farmerID: string | ObjectId;  //Relation with Users Service DB ()
+    farmerID: string;
     name: string;
     images?: 
         string []  //for passing to the upload method (ase64 format -> client form)
@@ -30,8 +29,6 @@ export interface ProductDocumentInterface {
     _id?: string | ObjectId;
     //ElasticSearch doesn't accept '_id' so it's converted to 'id' 
     id?: string | ObjectId;
-    // username: string;
-    farmerID?: string | ObjectId; //id from other mongooDB db (Users -> from Users Service)
     name: string;
     images?: [{ 
         url: string,
