@@ -20,8 +20,8 @@ export interface AuthUserInterface {
     password?: string;
     email?: string;
     userType?: 'customer' | 'farmer';
-    cloudinaryProfilePublicId?: string; 
-    profilePicture?: string;
+    // cloudinaryProfilePublicId?: string; 
+    // profilePicture?: string;
     verificationEmailToken?: string | null; //null after email verification
     resetPasswordToken?: string | null;
     expiresResetPassword?: Date | null; //when time exipres the date should be null
@@ -34,8 +34,8 @@ export interface AuthUserDocumentInterface {
     password?: string;
     email?: string;
     userType?: 'customer' | 'farmer';
-    cloudinaryProfilePublicId?: string; 
-    profilePicture?: string;
+    // cloudinaryProfilePublicId?: string; 
+    // profilePicture?: string;
     verificationEmailToken?: string | null; //null after email verification
     resetPasswordToken?: string | null;
     expiresResetPassword?: Date | null; 

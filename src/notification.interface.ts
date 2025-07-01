@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 export interface NotificationInterface {
     type: 'Order' | 'Authentication' | 'General';
     id?: string; //id type of Notification Service DB
-    senderID: string | mongoose.Types.ObjectId; //of can be get throught session -> currentUser.id
+    senderID: string;
     senderUsername: string;
     senderEmail?: string;
-    receiverID: string | mongoose.Types.ObjectId;
+    receiverID: string;
     receiverUsername: string;
     receiverEmail?: string;
     message: string;
