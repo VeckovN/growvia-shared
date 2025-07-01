@@ -7,6 +7,7 @@ export interface EmailLocalsInterface {
     verifyLink?: string,
     resetLink?: string,
     appLink?: string,
+    appIcon?: string,
     sender?: string
     orderUrl?: string; 
     orderID?: number;
