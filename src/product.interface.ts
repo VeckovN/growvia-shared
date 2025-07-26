@@ -39,13 +39,13 @@ export interface ProductDocumentInterface {
     _id?: string | ObjectId;
     //ElasticSearch doesn't accept '_id' so it's converted to 'id' 
     id?: string | ObjectId;
-    farmName: string;
-    farmerLocation: {
+    farmName?: string;
+    farmerLocation?: {
         country: string,
         city: string,
         address: string,
     }
-    farmerAvatar: {
+    farmerAvatar?: {
         url: string,
         publicID: string
     },
