@@ -7,6 +7,16 @@ export type UnitType = (typeof UNIT_TYPES)[number];  //10 kg,
 
 export interface ProductCreateInterface {
     farmerID: string;
+    farmName: string;
+    farmerLocation: {
+        country: string,
+        city: string,
+        address: string,
+    }
+    farmerAvatar: {
+        url: string,
+        publicID: string
+    },
     name: string;
     images?: 
         string []  //for passing to the upload method (ase64 format -> client form)
@@ -29,6 +39,16 @@ export interface ProductDocumentInterface {
     _id?: string | ObjectId;
     //ElasticSearch doesn't accept '_id' so it's converted to 'id' 
     id?: string | ObjectId;
+    farmName: string;
+    farmerLocation: {
+        country: string,
+        city: string,
+        address: string,
+    }
+    farmerAvatar: {
+        url: string,
+        publicID: string
+    },
     name: string;
     images?: [{ 
         url: string,

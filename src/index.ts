@@ -21,7 +21,8 @@ export {
     UserLocation,
     FarmLocation,
     CustomerDocumentInterface,
-    FarmerDocumentInterface
+    FarmerDocumentInterface,
+    UserProductUpdatePropInterface
 } from './users.interface'
 export {
     UnitType,
@@ -31,8 +32,10 @@ export {
 } from './product.interface'
 export {
     SearchResultInterface,
+    SearchHitTotalInterface,
     PaginatePropsInterface,
     QueryStringInterface,
+    ProductSerachOptionsInterface ,
     ElasticQueryInterface
 } from './search.interface'
 export {

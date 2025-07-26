@@ -13,6 +13,7 @@ export interface CustomerDocumentInterface{
     userID?: string;
     username?: string;
     email?: string;
+    phoneNumber?: string;
     profileAvatarFile?: string;
     profileAvatar?: {
         ulr:string,
@@ -40,6 +41,7 @@ export interface FarmerDocumentInterface {
     userID?: string;
     username?: string;
     email?: string;
+    phoneNumber?: string;
     profileAvatarFile?: string;
     backgroundImageFile?: string;
     profileImagesFile?: string;
@@ -70,4 +72,10 @@ export interface FarmerDocumentInterface {
     totalProducts?: number;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+}
+
+export interface UserProductUpdatePropInterface {
+    farmerID?: string;
+    farmName?: string;
+    farmerLocation?: UserLocation;
 }

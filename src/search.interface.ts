@@ -1,8 +1,29 @@
 import { SearchHit, Field, QueryDslRangeQuery } from "@elastic/elasticsearch/lib/api/types";
 
 export interface SearchResultInterface{
-    hits: SearchHit[]
+    hits: SearchHit[];
+    total?: number;
 }
+
+export interface SearchHitTotalInterface {
+  value: number;
+  relation: string;
+}
+
+export interface ProductSerachOptionsInterface {
+    query?: string;
+    category?: string;
+    subCategories?: string[];
+    minPrice?: number;
+    maxPrice?: number;
+    location?: string;
+    quantity?: number;
+    unit?: string;
+    from?: number; // Pagination offset
+    size?: number; // Items per page
+    sort?: 'newest' | 'price_asc' | 'price_desc' | 'available'
+}
+
 
 export interface PaginatePropsInterface {
     size: number; //count of returned items
