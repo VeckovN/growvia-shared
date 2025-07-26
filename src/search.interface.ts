@@ -10,7 +10,7 @@ export interface SearchHitTotalInterface {
   relation: string;
 }
 
-export interface ProductSerachOptionsInterface {
+export interface ProductSearchOptionsInterface {
     query?: string;
     category?: string;
     subCategories?: string[];
@@ -21,7 +21,7 @@ export interface ProductSerachOptionsInterface {
     unit?: string;
     from?: number; // Pagination offset
     size?: number; // Items per page
-    sort?: 'newest' | 'price_asc' | 'price_desc' | 'available'
+    sort?: 'relevant' | 'price_asc' | 'price_desc' | 'newest',
 }
 
 

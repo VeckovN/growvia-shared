@@ -35,7 +35,7 @@ export {
     SearchHitTotalInterface,
     PaginatePropsInterface,
     QueryStringInterface,
-    ProductSerachOptionsInterface ,
+    ProductSearchOptionsInterface,
     ElasticQueryInterface
 } from './search.interface'
 export {
