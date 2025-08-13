@@ -1,9 +1,13 @@
 // Interface for creating an order (matches the 'orders' table)
+
 export interface OrderCreateInterface {
-    customer_id: string; //monogDB objectID as a string
-    farmer_id: string; //monogDB objectID as a string
-    customer_email: string; //taken from the session (logged user) //req.currentUser.email
+    customer_id: string;
+    farmer_id: string;
+    customer_email: string;
     customer_username: string;
+    customer_first_name?: string; 
+    customer_last_name?: string;  
+    customer_phone?: string;      
     farmer_username: string;
     farmer_email: string;
     invoice_id: string;
@@ -15,8 +19,9 @@ export interface OrderCreateInterface {
     payment_method_id?: string;
     payment_method?: string;
     payment_expires_at: Date;
-    shipping_address?: string; //where the product will be delivered.
-    billing_address?: string; //used for patment verification and invoicing
+    shipping_address?: string;
+    shipping_postal_code?: string;
+    billing_address?: string;
     delivery_date?: Date | string;
     tracking_url?: string;
     orderItems: OrderItemCreateInterface[];
@@ -27,7 +32,10 @@ export interface OrderCreateInterface {
 export interface OrderItemCreateInterface {
     // order_item_id?: string, // will be auto-generated
     order_id: string, //UUIDID that belongs to
-    product_id: string, // Product mongoDB ObejctID from Product Service
+    product_id: string, // Product Id from Product Service
+    product_name: string;       // snapshot
+    product_image_url: string;  // snapshot
+    product_unit: string;
     quantity: number,
     unit_price: number, 
     total_price: number,
