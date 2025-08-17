@@ -13,7 +13,9 @@ export interface EmailLocalsInterface {
     orderID?: number;
     invoiceID?: string; //created on client side wiht react-pdf
     farmerUsername?: string;
+    farmerEmail?: string;
     customerUsername?: string;
+    customerEmail?: string;
     totalPrice?: number;
     orderItems?: OrderItemDocumentInterface[];
 }

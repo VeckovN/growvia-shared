@@ -1,17 +1,46 @@
-import mongoose from "mongoose";
+export type NotificationType =
+  | "order"
+  | "iot"
+  | "authentication"
+  | "rating"
+  | "general"
+  | "system";
+
+
+export interface NotificationUser {
+    id: string;
+    name: string; //Farmer -> farmName, Customer -> fullName
+}
+
+export interface NotificationSender extends NotificationUser {
+    avatarUrl: string; 
+}
+
+export interface NotificationReceiver extends NotificationUser {
+}
+
+export interface OrderNotificationData {
+    orderId: string;
+    status: string; 
+}
+
+export interface IotNotificationData {
+    iotStatus: string;
+}
 
 export interface NotificationInterface {
-    type: 'Order' | 'Authentication' | 'General';
-    id?: string; //id type of Notification Service DB
-    senderID: string;
-    senderUsername: string;
-    senderEmail?: string;
-    receiverID: string;
-    receiverUsername: string;
-    receiverEmail?: string;
+    id?: string;
+    type: NotificationType;
+    sender: NotificationSender;
+    receiver: NotificationReceiver;
     message: string;
     isRead: boolean;
-    orderID?: string;
     bothUsers?: boolean;
-    createdAt?: Date;
+
+    //Type specific fields - optional
+    order?: OrderNotificationData;
+    iot?: IotNotificationData;
+
+    createdAt: Date;
+    updatedAt: string;
 }
