@@ -13,7 +13,7 @@ export interface NotificationUser {
 }
 
 export interface NotificationSender extends NotificationUser {
-    avatarUrl: string; 
+    avatarUrl?: string; 
 }
 
 export interface NotificationReceiver extends NotificationUser {
@@ -41,6 +41,6 @@ export interface NotificationInterface {
     order?: OrderNotificationData;
     iot?: IotNotificationData;
 
-    createdAt: Date;
-    updatedAt: string;
+    createdAt?: string;
+    updatedAt?: string;
 }

@@ -22,6 +22,7 @@ export {
     FarmLocation,
     CustomerDocumentInterface,
     FarmerDocumentInterface,
+    FarmerSearchOptionsInterface,
     UserProductUpdatePropInterface
 } from './users.interface'
 export {
