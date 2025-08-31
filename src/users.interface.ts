@@ -74,6 +74,12 @@ export interface FarmerDocumentInterface {
     updatedAt?: Date | string;
 }
 
+export interface FarmerSearchOptionsInterface {
+    from?: number;
+    size?: number;
+    farmerQuery?: string;
+}
+
 export interface UserProductUpdatePropInterface {
     farmerID?: string;
     farmName?: string;
