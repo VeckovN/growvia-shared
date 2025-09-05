@@ -50,6 +50,7 @@ export interface FarmerDocumentInterface {
         backgroundImageFile: string;
         profileImagesFile: string[];
     }
+    removedImages?:string[];
     profileAvatar?: {
         url: string,
         publicID: string,

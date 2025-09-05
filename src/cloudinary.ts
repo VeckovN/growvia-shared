@@ -9,7 +9,6 @@ export const uploadImage = (
     public_id?: string,
     invalidate?: boolean, 
     overwrite?: boolean 
-
 ): Promise<UploadApiResponse | UploadApiErrorResponse | undefined> => {
     return new Promise((resolve) =>{
         cloudinary.v2.uploader.upload(
@@ -18,7 +17,7 @@ export const uploadImage = (
                 public_id,
                 invalidate,
                 overwrite,
-                resource_type: 'auto' //images, zip
+                resource_type: 'image'
             },
             (error: UploadApiErrorResponse | undefined, result: UploadApiResponse | undefined) => {
                 if (error) 
@@ -29,3 +28,24 @@ export const uploadImage = (
         );
     });
 }
+
+export const deleteImage = (
+    public_id: string,
+    invalidate: boolean = true // optional, defaults to true
+): Promise<{ result: string } | UploadApiErrorResponse | undefined> => {
+    return new Promise((resolve) => {
+        cloudinary.v2.uploader.destroy(
+            public_id,
+            { 
+                invalidate, 
+                resource_type: "image" 
+            },
+            (error: UploadApiErrorResponse | undefined, result: { result: string } | undefined) => {
+                if (error) 
+                    resolve(error);
+                
+                resolve(result);
+            }
+        );
+    });
+};

@@ -53,7 +53,8 @@ export {
     isEmailValid
 } from './helper'
 export {
-    uploadImage
+    uploadImage,
+    deleteImage
 } from './cloudinary'
 export{ verifyGateway} from './verifyGatawayMiddleware'
 export {winstonLogger} from './winstonLoger';
