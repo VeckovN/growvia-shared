@@ -8,6 +8,11 @@ export interface UserLocation{
     address: string,
 }
 
+export interface FarmLocation extends UserLocation{
+    latitude: number | null;
+    longitude: number | null;
+}
+
 //THERE WILL BE 'userID' that match Authentication 'id' prop
 export interface CustomerDocumentInterface{
     userID?: string;
@@ -27,14 +32,6 @@ export interface CustomerDocumentInterface{
     purchasedProducts?: number[];
     createdAt?: Date | string;
     updatedAt?: Date | string;
-}
-
-export interface FarmLocation extends UserLocation{
-    // country: string,
-    // city: string,
-    // address: string,
-    latitude: string,
-    longitude: string,
 }
 
 export interface FarmerDocumentInterface { 
