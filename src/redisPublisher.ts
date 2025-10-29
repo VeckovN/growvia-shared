@@ -8,6 +8,13 @@ export interface CacheInvalidationEventInterface {
     keys: string[];
     timestamp: number;
     service: string;
+    metadata?: { 
+        //additional data for conditional invalidation (etc. 'farmerID', 'productID')
+        farmerID?: string,
+        farmerName?: string,
+        productID?: string,
+        [key: string]: any; //any other 'any' data
+    };
 }
 
 let publisherClient: RedisClientType | null = null;
@@ -48,7 +55,10 @@ export const initializeCachePublisher = async(
 
 
 //keys -> keys Array of cache keys to invalidate (supports wildcards like "category:*")
-export const publishCacheInvalidation = async(keys:string[]):Promise<void> =>{
+export const publishCacheInvalidation = async(
+    keys:string[],
+    metadata?: Record<string, any> 
+):Promise<void> =>{
     if(!publisherClient || !publisherClient.isOpen){
         logger?.warn('Publisher not initialized, skipping cache invalidation');
         return;
@@ -57,10 +67,12 @@ export const publishCacheInvalidation = async(keys:string[]):Promise<void> =>{
         const event: CacheInvalidationEventInterface = {
             keys,
             timestamp: Date.now(),
-            service: serviceName
+            service: serviceName,
+            metadata
         }
 
         publisherClient.publish('cache:invalidate', JSON.stringify(event));
+        
         logger?.info(`Published cache invalidation for keys: ${keys.join(', ')}`);
     }
     catch(error){
