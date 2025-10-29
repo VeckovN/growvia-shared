@@ -58,3 +58,10 @@ export {
 } from './cloudinary'
 export{ verifyGateway} from './verifyGatawayMiddleware'
 export {winstonLogger} from './winstonLoger';
+export {
+    CacheInvalidationEventInterface,
+    initializeCachePublisher,
+    publishCacheInvalidation,
+    disconnectCachePublisher,
+    isCachePublisherReady
+} from './redisPublisher'
