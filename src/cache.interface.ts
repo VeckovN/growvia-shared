@@ -24,6 +24,3 @@ export interface ProductsCacheData {
     messages: string;
     data: ProductDocumentInterface[];
 }
-
-
-

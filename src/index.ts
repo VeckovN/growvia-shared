@@ -59,9 +59,14 @@ export {
 export{ verifyGateway} from './verifyGatawayMiddleware'
 export {winstonLogger} from './winstonLoger';
 export {
-    CacheInvalidationEventInterface,
     initializeCachePublisher,
     publishCacheInvalidation,
     disconnectCachePublisher,
     isCachePublisherReady
-} from './redisPublisher'
+} from './redisPublisher';
+export {
+    CacheInvalidationMetadata,
+    CacheInvalidationEventInterface,
+    FarmersCacheData,
+    ProductsCacheData
+} from './cache.interface';
