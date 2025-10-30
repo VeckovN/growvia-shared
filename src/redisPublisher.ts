@@ -1,42 +1,24 @@
 import { createClient } from 'redis';
 import { winstonLogger } from './winstonLoger';
 import { Logger } from 'winston';
+import { CacheInvalidationEventInterface, CacheInvalidationMetadata } from './cache.interface';
 
 type RedisClientType = ReturnType<typeof createClient>;
-
-export interface CacheInvalidationEventInterface {
-    keys: string[];
-    timestamp: number;
-    service: string;
-    metadata?: { 
-        //additional data for conditional invalidation (etc. 'farmerID', 'productID')
-        farmerID?: string,
-        farmerName?: string,
-        productID?: string,
-        [key: string]: any; //any other 'any' data
-    };
-}
 
 let publisherClient: RedisClientType | null = null;
 let serviceName: string = 'unknown-serviceName' 
 let logger:Logger;
 
-//must be called before anything else -> the logger got initialzied
 export const initializeCachePublisher = async(
     redisUrl: string, 
     service: string,
     elasticsearchUrl?: string
 ): Promise<void> => {
     try{
-
         const esUrl = elasticsearchUrl || 'http://easticsearch_container:9200'
 
         serviceName = service;
-        logger = winstonLogger(
-            esUrl,
-            `${serviceName}-cachePublisher`,
-            'debug'
-        )
+        logger = winstonLogger(esUrl, `${serviceName}-cachePublisher`, 'debug')
 
         publisherClient = createClient({ url: redisUrl})
 
@@ -53,11 +35,9 @@ export const initializeCachePublisher = async(
     }
 }
 
-
-//keys -> keys Array of cache keys to invalidate (supports wildcards like "category:*")
 export const publishCacheInvalidation = async(
     keys:string[],
-    metadata?: Record<string, any> 
+    metadata?: CacheInvalidationMetadata
 ):Promise<void> =>{
     if(!publisherClient || !publisherClient.isOpen){
         logger?.warn('Publisher not initialized, skipping cache invalidation');
@@ -81,7 +61,6 @@ export const publishCacheInvalidation = async(
     }
 }
 
-
 export const disconnectCachePublisher = async():Promise<void> => {
     if(publisherClient && publisherClient.isOpen){
         await publisherClient.quit();
@@ -90,8 +69,6 @@ export const disconnectCachePublisher = async():Promise<void> => {
     }
 }
 
-
-//Check if publisher is ready
 export const isCachePublisherReady = (): boolean => {
     return publisherClient !==null && publisherClient.isOpen;
 }
