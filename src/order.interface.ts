@@ -1,5 +1,3 @@
-// Interface for creating an order (matches the 'orders' table)
-
 export interface OrderCreateInterface {
     customer_id: string;
     farmer_id: string;
@@ -36,7 +34,8 @@ export interface OrderItemCreateInterface {
     product_id: string, // Product Id from Product Service
     product_name: string;       // snapshot
     product_image_url: string;  // snapshot
-    product_unit: string;
+    product_unit: string; //snapshot
+    product_description: string; //snapshot
     quantity: number,
     unit_price: number, 
     total_price: number,
@@ -57,7 +56,6 @@ export interface OrderItemDocumentInterface extends OrderItemCreateInterface {
 }
 
 //OrderDocumentINterface can be defined with Omit<OrderCreateInterface, 'orderItems'>
-
 export interface OrderEmailMessageInterface {
     template?: string;
     type?: string;
